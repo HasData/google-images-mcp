@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.hasdata/google-images",
   "title": "HasData Google Images",
-  "description": "Google Images results with their source pages, thumbnails and full-resolution URLs, as structured JSON.",
+  "description": "Google Images results with source pages, thumbnails and full-resolution URLs, as JSON.",
   "version": "1.0.0",
   "websiteUrl": "https://hasdata.com/apis/google-images-api",
   "repository": {
