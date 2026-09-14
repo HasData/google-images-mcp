@@ -164,6 +164,10 @@ One call answers each of these, because a page carries 100 results. Paging is on
 
 ## Tools
 
+| Tool | Credits | What it returns |
+| :--- | :--- | :--- |
+| `hasdata_google_images_images_getImageSearchResults` | 5 | Each image with title, source page URL, direct image URL, thumbnail, dimensions, source domain, and position |
+
 One tool, 5 credits per successful call.
 
 ### Get image search results
