@@ -9,12 +9,12 @@ It reads the Google Images results page a signed-out visitor sees.
 **1,000 free credits every month, no card required**, which is 200 Google Images calls at the 5-credit rate.
 
 ```
-https://mcp.hasdata.com/api/mcp?apis=google_images
+https://mcp.hasdata.com/mcp?apis=google_images
 ```
 
 [![Glama score](https://glama.ai/mcp/servers/HasData/google-images-mcp/badges/score.svg)](https://glama.ai/mcp/servers/HasData/google-images-mcp)
 [![tool contract](https://github.com/HasData/google-images-mcp/actions/workflows/contract.yml/badge.svg)](https://github.com/HasData/google-images-mcp/actions/workflows/contract.yml)
-[![MCP](https://img.shields.io/badge/MCP-remote%20%7C%20streamable%20HTTP-6366f1?style=flat-square)](https://mcp.hasdata.com/api/mcp?apis=google_images)
+[![MCP](https://img.shields.io/badge/MCP-remote%20%7C%20streamable%20HTTP-6366f1?style=flat-square)](https://mcp.hasdata.com/mcp?apis=google_images)
 [![Tools](https://img.shields.io/badge/tools-1-10b981?style=flat-square)](#tools)
 [![npm](https://img.shields.io/npm/v/@hasdata/google-images-mcp?style=flat-square&logo=npm&label=npm&color=cb3837)](https://www.npmjs.com/package/@hasdata/google-images-mcp)
 [![PyPI](https://img.shields.io/pypi/v/hasdata-google-images-mcp?style=flat-square&logo=pypi&logoColor=white&label=PyPI&color=3775a9)](https://pypi.org/project/hasdata-google-images-mcp/)
@@ -45,7 +45,7 @@ The server URL is the same for every client. We run it hands-on in Claude Code a
 
 | Field | Value |
 | :--- | :--- |
-| URL | `https://mcp.hasdata.com/api/mcp?apis=google_images` |
+| URL | `https://mcp.hasdata.com/mcp?apis=google_images` |
 | Transport | HTTP, streamable |
 | Auth header | `x-api-key: HASDATA_API_KEY` |
 
@@ -55,7 +55,7 @@ Clients with OAuth support can add the same URL as a connector and sign in witho
 <summary><b>Claude Code</b></summary>
 
 ```bash
-claude mcp add --transport http google-images "https://mcp.hasdata.com/api/mcp?apis=google_images" \
+claude mcp add --transport http google-images "https://mcp.hasdata.com/mcp?apis=google_images" \
   --header "x-api-key: HASDATA_API_KEY"
 ```
 
@@ -64,7 +64,7 @@ claude mcp add --transport http google-images "https://mcp.hasdata.com/api/mcp?a
 <details>
 <summary><b>Claude Desktop</b></summary>
 
-Settings, then Connectors, then Add custom connector, then paste `https://mcp.hasdata.com/api/mcp?apis=google_images` and sign in.
+Settings, then Connectors, then Add custom connector, then paste `https://mcp.hasdata.com/mcp?apis=google_images` and sign in.
 
 For the config-file route, Claude Desktop loads only local (stdio) servers, so it reaches a remote server through a stdio launcher. The `@hasdata/google-images-mcp` package is that launcher, and it reads the key from the environment. Add this to `claude_desktop_config.json`:
 
@@ -105,7 +105,7 @@ For Python instead of Node, swap the launcher for the PyPI package, which `uvx` 
 {
   "mcpServers": {
     "google-images": {
-      "url": "https://mcp.hasdata.com/api/mcp?apis=google_images",
+      "url": "https://mcp.hasdata.com/mcp?apis=google_images",
       "headers": { "x-api-key": "HASDATA_API_KEY" }
     }
   }
@@ -123,7 +123,7 @@ For Python instead of Node, swap the launcher for the PyPI package, which `uvx` 
 {
   "mcpServers": {
     "google-images": {
-      "serverUrl": "https://mcp.hasdata.com/api/mcp?apis=google_images",
+      "serverUrl": "https://mcp.hasdata.com/mcp?apis=google_images",
       "headers": { "x-api-key": "HASDATA_API_KEY" }
     }
   }
@@ -142,7 +142,7 @@ For Python instead of Node, swap the launcher for the PyPI package, which `uvx` 
   "servers": {
     "google-images": {
       "type": "http",
-      "url": "https://mcp.hasdata.com/api/mcp?apis=google_images",
+      "url": "https://mcp.hasdata.com/mcp?apis=google_images",
       "headers": { "x-api-key": "HASDATA_API_KEY" }
     }
   }
