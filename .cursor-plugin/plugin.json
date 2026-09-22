@@ -1,0 +1,25 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "hasdata-google-images-mcp",
+  "version": "1.0.0",
+  "description": "Google Images MCP server for Cursor. Image search results with source pages, thumbnails and full-resolution URLs, filtered by size, colour and type, as structured JSON. Remote MCP server hosted by HasData, connects over streamable HTTP with your HasData API key.",
+  "author": {
+    "name": "HasData",
+    "url": "https://hasdata.com"
+  },
+  "homepage": "https://hasdata.com/apis/google-images-api",
+  "repository": "https://github.com/HasData/google-images-mcp",
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "google-images",
+    "image-search",
+    "serp",
+    "reverse-image",
+    "seo",
+    "model-context-protocol",
+    "hasdata",
+    "scraper"
+  ],
+  "logo": "https://hasdata.com/favicon.svg"
+}
