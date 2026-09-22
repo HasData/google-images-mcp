@@ -1,0 +1,28 @@
+---
+description: How to pull Google Images results and filter them by size, colour and type through the HasData MCP server
+alwaysApply: false
+---
+
+# Google Images through HasData
+
+One tool, `hasdata_google_images_images_getImageSearchResults`. Only `q` is required, and one call returns a hundred results rather than ten.
+
+Cost is per call rather than per result, so the cheapest shape here is one wide call. `ijn` is the page number and it starts at zero, which makes `1` the second hundred, not the first.
+
+## Two different URLs per result
+
+`original` points at the file on whoever hosts it, so it carries none of Google's availability and can be dead, hotlink-blocked or slow. Fetch it defensively and fall back to `thumbnail`, which is served from Google's CDN as a URL rather than embedded data.
+
+`originalWidth` and `originalHeight` describe the file behind `original`. Filtering by size locally means reading those rather than measuring whatever you displayed.
+
+## Filters fail quietly
+
+`tbs` is Google's own filter string and several filters combine with commas, such as `isz:l,ic:gray,itp:photo`. An unrecognised value is ignored rather than rejected, and a filter that did nothing looks identical to a filter that matched everything. Check that the result set actually narrowed before trusting a `tbs` string assembled by hand.
+
+The useful ones are `isz:l`, `isz:m` and `isz:i` for size, `isz:lt,islt:qsvga` upward for a floor, `ic:color` and `ic:gray`, `ic:specific,isc:red` for a named colour, and `itp:photo`, `itp:face`, `itp:clipart`, `itp:lineart` and `itp:animated` for type.
+
+## Locale is three separate axes
+
+`domain` is which Google answers, `gl` is where the search comes from, and `hl` is the interface language. They move the results less than people expect, so change one at a time and compare.
+
+Nothing here licenses an image. The results say where a file sits, not whether it can be used.
