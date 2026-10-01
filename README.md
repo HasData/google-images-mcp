@@ -6,7 +6,7 @@ A hosted Model Context Protocol (MCP) server that gives Claude, Cursor, Windsurf
 
 It reads the Google Images results page a signed-out visitor sees.
 
-**1,000 free credits every month, no card required**, which is 200 Google Images calls at the 5-credit rate.
+**1,000 free credits every month, no card required**, which is 100 Google Images calls at the 5-credit rate.
 
 ```
 https://mcp.hasdata.com/mcp?apis=google_images
@@ -166,9 +166,9 @@ One call answers each of these, because a page carries 100 results. Paging is on
 
 | Tool | What it returns |
 | --- | --- |
-| `hasdata_google_images_images_getImageSearchResults` | Each image with title, source page URL, direct image URL, thumbnail, dimensions, source domain, and position. 5 credits a call |
+| `hasdata_google_images_images_getImageSearchResults` | Each image with title, source page URL, direct image URL, thumbnail, dimensions, source domain, and position. 10 credits a call |
 
-One tool, 5 credits per successful call.
+One tool, 10 credits per successful call.
 
 ### Get image search results
 
@@ -238,11 +238,11 @@ Results that carry data also carry a `requestMetadata.id` worth quoting in suppo
 
 ## Pricing, free tier and limits
 
-The Google Images tool costs **5 credits per successful call**. Response size does not change the price, and a call returns 100 results, which makes this one of the cheaper tools in the catalogue per row returned.
+The Google Images tool costs **10 credits per successful call**. Response size does not change the price, and a call returns 100 results, which makes this one of the cheaper tools in the catalogue per row returned.
 
-The free tier is **1,000 credits every month with no card**, which is 200 Google Images calls at the base rate. It renews with the billing cycle, so a low-volume agent runs on the free tier indefinitely.
+The free tier is **1,000 credits every month with no card**, which is 100 Google Images calls at the base rate. It renews with the billing cycle, so a low-volume agent runs on the free tier indefinitely.
 
-Paid plans start at **$59 a month** for 200,000 credits, which is 40,000 calls. The unit price falls with volume, from **$1.48 per 1,000 calls** on the entry plan to **$0.60** on Basic and **$0.41** across the Growth tiers. Current figures live on the [pricing page](https://hasdata.com/prices?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp).
+Paid plans start at **$59 a month** for 200,000 credits, which is 20,000 calls. The unit price falls with volume, from **$1.48 per 1,000 calls** on the entry plan to **$0.60** on Basic and **$0.41** across the Growth tiers. Current figures live on the [pricing page](https://hasdata.com/prices?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp).
 
 Your plan also sets concurrency. The free tier allows 1 request at a time, Startup 5, Basic 15, and the Growth tiers run from 50 to 500. Retry on the 429 with a backoff in anything unattended, because an agent that sweeps a keyword list will reach the ceiling before you do.
 
@@ -320,7 +320,7 @@ npm install
 HASDATA_API_KEY=your_key_here npm test
 ```
 
-The tests in `test/` assert the tool contract, the part that can break without a commit here. They check that `?apis=google_images` returns the one expected tool, that its name has not changed, that it still requires `q` and carries a description, that the filter and targeting parameters this README documents are still in the schema, and that the key in use is actually accepted. That last check calls the tool for real and costs 5 credits, which is the price of a canary that can fail for the right reason.
+The tests in `test/` assert the tool contract, the part that can break without a commit here. They check that `?apis=google_images` returns the one expected tool, that its name has not changed, that it still requires `q` and carries a description, that the filter and targeting parameters this README documents are still in the schema, and that the key in use is actually accepted. That last check calls the tool for real and costs 10 credits, which is the price of a canary that can fail for the right reason.
 
 One test asserts that a live search returns results carrying both `original` and its dimensions. Those three fields are what makes this tool worth calling over a plain SERP, and a parser change that dropped them would leave a green tools list behind it.
 
