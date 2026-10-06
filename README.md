@@ -291,7 +291,7 @@ Through `tbs`. `isz:l` gets large images, `isz:lt,islt:2mp` gets anything above 
 
 ### Can I use this together with other HasData APIs?
 
-Yes. One key covers everything, and one endpoint serves them all through the `apis` parameter. Point a client at `?apis=google_images,google_serp` to get both tool sets in one connection, or at [`mcp.hasdata.com/api/mcp`](https://docs.hasdata.com/mcp-server?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp) for the full catalogue.
+Yes. One key covers everything, and one endpoint serves them all through the `apis` parameter. Point a client at `?apis=google_images,google_serp` to get both tool sets in one connection, or at [`mcp.hasdata.com/mcp`](https://docs.hasdata.com/mcp-server?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp) for the full catalogue.
 
 ### Is HasData affiliated with Google?
 
