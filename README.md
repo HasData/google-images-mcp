@@ -6,7 +6,7 @@ A hosted Model Context Protocol (MCP) server that gives Claude, Cursor, Windsurf
 
 It reads the Google Images results page a signed-out visitor sees.
 
-**1,000 free credits every month, no card required**, which is 100 Google Images calls at the 5-credit rate.
+**1,000 free credits every month, no card required**, which is 100 Google Images calls at the 10-credit rate.
 
 ```
 https://mcp.hasdata.com/mcp?apis=google_images
@@ -38,7 +38,7 @@ https://mcp.hasdata.com/mcp?apis=google_images
 
 ## What you need
 
-An MCP client and a HasData API key from the [dashboard](https://app.hasdata.com/sign-up?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp), free to create with no card, and the free tier covers about 200 calls a month at the 5-credit rate. This is a remote server, so the simplest path is a URL and an `x-api-key` header, with no container to run. A client that only speaks stdio reaches it through a thin launcher, published as `@hasdata/google-images-mcp` on npm and `hasdata-google-images-mcp` on PyPI, shown below.
+An MCP client and a HasData API key from the [dashboard](https://app.hasdata.com/sign-up?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp), free to create with no card, and the free tier covers about 100 calls a month at the 10-credit rate. This is a remote server, so the simplest path is a URL and an `x-api-key` header, with no container to run. A client that only speaks stdio reaches it through a thin launcher, published as `@hasdata/google-images-mcp` on npm and `hasdata-google-images-mcp` on PyPI, shown below.
 
 ## Quick start
 
