@@ -26,3 +26,7 @@ The useful ones are `isz:l`, `isz:m` and `isz:i` for size, `isz:lt,islt:qsvga` u
 `domain` is which Google answers, `gl` is where the search comes from, and `hl` is the interface language. They move the results less than people expect, so change one at a time and compare.
 
 Nothing here licenses an image. The results say where a file sits, not whether it can be used.
+
+## Prompts and resources
+
+The server also serves resources that spell out the accepted values of every parameter that takes a fixed list, each one at `hasdata://google_images/<parameter>`. Reading one spends no credits and makes no upstream request, which beats discovering the vocabulary from a rejected call. Listing them needs no API key either, so a client can read them before the user has connected an account.
