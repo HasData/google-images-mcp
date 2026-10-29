@@ -2,7 +2,7 @@
 
 <!-- mcp-name: com.hasdata/google-images -->
 
-A hosted Model Context Protocol (MCP) server that gives Claude, Cursor, Windsurf and any other MCP client one read-only Google Images tool. Run an image search with size, colour and type filters and get 100 results a call, each with the page it came from and the full-resolution file URL, as structured JSON, with nothing to host.
+A hosted [Google Images MCP server](https://hasdata.com/mcp/google-images?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp&utm_content=readme-intro) that gives Claude, Cursor, Windsurf and any other MCP client one read-only Google Images tool. Run an image search with size, colour and type filters and get 100 results a call, each with the page it came from and the full-resolution file URL, as structured JSON, with nothing to host.
 
 It reads the Google Images results page a signed-out visitor sees.
 
@@ -259,7 +259,7 @@ The free tier is **1,000 credits every month with no card**, which is 100 Google
 
 Paid plans start at **$59 a month** for 200,000 credits, which is 20,000 calls. The unit price falls with volume, from **$1.48 per 1,000 calls** on the entry plan to **$0.60** on Basic and **$0.41** across the Growth tiers. Current figures live on the [pricing page](https://hasdata.com/prices?utm_source=github&utm_medium=syndication&utm_campaign=google-images-mcp).
 
-Your plan also sets concurrency. The free tier allows 1 request at a time, Startup 5, Basic 15, and the Growth tiers run from 50 to 500. Retry on the 429 with a backoff in anything unattended, because an agent that sweeps a keyword list will reach the ceiling before you do.
+Your plan also sets concurrency. The free tier allows 5 requests at a time, Startup 5, Basic 15, and the Growth tiers run from 50 to 500. Retry on the 429 with a backoff in anything unattended, because an agent that sweeps a keyword list will reach the ceiling before you do.
 
 A request that comes back non-200 is not billed. A successful call that finds nothing is still a call.
 
